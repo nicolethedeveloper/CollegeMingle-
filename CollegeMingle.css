@@ -1,0 +1,18 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 29, 2016, 3:39:13 PM
+    Author     : Nicole
+*/
+@charset "UTF-8";
+.container-fluid .row #tell_about_yourself {
+	font-size: 24px;
+	padding-left: 6em;
+}
+.container-fluid .row #whats_your_type {
+	padding-left: 18em;
+	font-size: 24px;
+}
