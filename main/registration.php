@@ -35,7 +35,7 @@
     <h3 class="text-center">Tell Us A Little About Yourself, Then Select Your Type On the Right</h3><br><br>
     	
         <!-- form -->
-        <form action="#" method="get">
+        <form action="." method="get">
         <div class="col-md-3 col-md-offset-1">
             <input type="hidden" name="action" value="add_user">  <!-- action attribute -->
 			
@@ -89,7 +89,7 @@
                 <label>Password:</label><br>
                 <input type="password" name="password"><br><br>
                 <label>Tell us how your best friend would describe you:</label><br>
-                <textarea name="aboutUser" rows="10" cols="40"></textarea><br><br><br>
+                <textarea name="bio" rows="10" cols="40"></textarea><br><br><br>
                 <input type="submit" name="submitReg_btn">
               </div>
               

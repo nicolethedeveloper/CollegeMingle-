@@ -17,8 +17,7 @@
         <li><a href="#">Link</a> </li>-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="registration.php">Register</a> </li>
-          <li><a href="login.php">Login</a> </li>
+          <li><a href="login.php">Logout</a></li>
         <li><a href="profile.php">Profile</a> </li>
       </ul>
     </div>
@@ -31,52 +30,52 @@
 	<h1 class="text-center">Browse Matches</h1>
 	<hr>
   	<div class="row">
+            
     
     	<div class="col-md-6">
         	<div class="match_pics">
-        		<a href="#"><img src="images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
                 <p class="text-center">Adam Jones</p>
                 <p class="text-center">19 | Virginia Beach, VA</p>
+                <form action="." method="post" />
+                    <input type="hidden" name="action" value="view_match1" />
+                    <input class="btn-view-match" type="submit" value="View Match" />
+                </form>
             </div>
             <div class="match_pics">
-        		<a href="#"><img src="images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
                 <p class="text-center">Adam Jones</p>
                 <p class="text-center">19 | Virginia Beach, VA</p>
+                <form action="." method="post" />
+                    <input type="hidden" name="action" value="view_match2" />
+                    <input class="btn-view-match" type="submit" value="View Match" />
+                </form>
             </div>
             
-        </div>
+        </div> <!-- end of column -->
         
         <div class="col-md-6">
         	<div class="match_pics">
-        		<a href="#"><img src="images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
                 <p class="text-center">Adam Jones</p>
                 <p class="text-center">19 | Virginia Beach, VA</p>
+                <form action="." method="post" />
+                    <input type="hidden" name="action" value="view_match3" />
+                    <input class="btn-view-match" type="submit" value="View Match" />
+                </form>
             </div>
             <div class="match_pics">
-        		<a href="#"><img src="images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
                 <p class="text-center">Adam Jones</p>
                 <p class="text-center">19 | Virginia Beach, VA</p>
+                <form action="." method="post" />
+                    <input type="hidden" name="action" value="view_match4" />
+                    <input class="btn-view-match" type="submit" value="View Match" />
+                </form>
             </div>
-        </div>
-        
-        
-  
- 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  </div>
+        </div> <!-- end of column -->
+
+  </div> <!-- end of row -->
 </div>
 
 <!-- footer -->
@@ -93,22 +92,22 @@
       </address>
       <h4>Social</h4>
       <div class="row">
-      	<div class="col-xs-2"><img class="img-circle" src="images/32X32.gif" alt=""></div>
-      	<div class="col-xs-2"><img class="img-circle" src="images/32X32.gif" alt=""></div>
-      	<div class="col-xs-2"><img class="img-circle" src="images/32X32.gif" alt=""></div>
-      	<div class="col-xs-2"><img class="img-circle" src="images/32X32.gif" alt=""></div>        
+      	<div class="col-xs-2"><img class="img-circle" src="../images/32X32.gif" alt=""></div>
+      	<div class="col-xs-2"><img class="img-circle" src="../images/32X32.gif" alt=""></div>
+      	<div class="col-xs-2"><img class="img-circle" src="../images/32X32.gif" alt=""></div>
+      	<div class="col-xs-2"><img class="img-circle" src="../images/32X32.gif" alt=""></div>        
       </div>
     </div>
     <div class="col-lg-4 col-md-6 col-sm-6">
       <h2>Testimonials</h2>
       <div class="media">
-        <div class="media-left"> <a href="#"> <img class="media-object" src="images/35X35.gif" alt="..."> </a> </div>
+        <div class="media-left"> <a href="#"> <img class="media-object" src="../images/35X35.gif" alt="..."> </a> </div>
         <div class="media-body">
           <h4 class="media-heading">Media heading</h4>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
       </div>
       <div class="media">
-        <div class="media-left"> <a href="#"> <img class="media-object" src="images/35X35.gif" alt="..."> </a> </div>
+        <div class="media-left"> <a href="#"> <img class="media-object" src="../images/35X35.gif" alt="..."> </a> </div>
         <div class="media-body">
           <h4 class="media-heading">Media heading</h4>
           Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>

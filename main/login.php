@@ -31,15 +31,19 @@
 	<hr>
   	<div class="row">
   
-  		<div class="col-md-3 col-md-offset-1">
+            <div class="col-md-3 col-md-offset-1">
+                
+                <form action="." method="post">
+                    <input type="hidden" name="action" value="login" />
+                    
+                    <label>Username:</label>
+                    <input type="text" name="uname_login" /><br><br>
 
-          <label>Username:</label>
-          <input type="text" name="uname_login"><br><br>
-          
-          <label>Password:</label>
-          <input type="password" name="pword_login"><br><br>
-          
-          <input type="submit" name="login_btn" value="Login">
+                    <label>Password:</label>
+                    <input type="password" name="pword_login" /><br><br>
+
+                    <input type="submit" name="login_btn" value="Login" />
+                </form>
    	   </div>
        
        <div class="col-md-7 col-md-offset-1">
