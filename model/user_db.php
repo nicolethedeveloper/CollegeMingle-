@@ -31,7 +31,9 @@ function add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, 
 }
 
 //delete_user function
-
+function deleteUser() {
+        
+}
 //quick_match function
 
 //function to view a user
