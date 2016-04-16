@@ -32,7 +32,13 @@ function add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, 
 
 //delete_user function
 function deleteUser() {
-        
+        gloabl $db;
+        $query = 'DELETE * FROM users
+        WHERE username = :username';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':username', $username);
+        $success = $statement->execute();
+        $statement->closeCursor();
 }
 //quick_match function
 
