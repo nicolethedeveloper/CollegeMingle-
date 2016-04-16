@@ -41,6 +41,10 @@ function deleteUser() {
         $statement->closeCursor();
 }
 //quick_match function
+function quickMatch() {
+        global $db;
+        $query = ''
+}
 
 //function to view a user
 function viewUser1() {
@@ -54,6 +58,7 @@ function viewUser1() {
     $statement->closeCursor();
     return $user;
 }
+
 
 ?>
 
