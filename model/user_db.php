@@ -34,7 +34,7 @@ function add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, 
 function deleteUser() {
         gloabl $db;
         $query = 'DELETE * FROM users
-        WHERE username = :username';
+                  WHERE username = :username';
         $statement = $db->prepare($query);
         $statement->bindValue(':username', $username);
         $success = $statement->execute();
@@ -43,7 +43,20 @@ function deleteUser() {
 //quick_match function
 function quickMatch() {
         global $db;
-        $query = ''
+        $query = 'SELECT * FROM users
+                  WHERE wanted_sex = :wanted_sex';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':wanted_sex', $wanted_sex);
+        $success = $statement->execute();
+        $statement->closeCursor();
+        
+        $query = 'SELECT * FROM users
+                  WHERE wanted_type = :wanted_type';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':wanted_type', $wanted_type);
+        $success = $statement->execute();
+        $statement->closeCursor();
+        
 }
 
 //function to view a user
