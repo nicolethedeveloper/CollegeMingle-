@@ -40,13 +40,13 @@
             <input type="hidden" name="action" value="add_user">  <!-- action attribute -->
 			
             	<label>I am a <select name="userSex">
-                				<option>Man</option>
-                                <option>Woman</option>
-                			</select>
+                                    <option>Man</option>
+                                    <option>Woman</option>
+                		</select>
                       looking for a <select name="mateSex">
-                				<option>Woman</option>
-                                <option>Man</option>
-                			</select>
+                			<option>Woman</option>
+                                        <option>Man</option>
+                                    </select>
                 </label><br><br>
                 <label>First Name:</label><br>
 				<input type="text" name="firstName"><br><br>

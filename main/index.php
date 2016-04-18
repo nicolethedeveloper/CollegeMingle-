@@ -12,35 +12,74 @@ if ($action === NULL) {
 }
 
 if ($action == 'add_user') {
-    $user_sex = filter_input(INPUT_POST, 'userSex');
-    $wanted_sex = filter_input(INPUT_POST, 'mateSex');
-    $first_name = filter_input(INPUT_POST, 'firstName');
-    $last_name = filter_input(INPUT_POST, 'lastName');
-    $age = filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT);
-    $city = filter_input(INPUT_POST, 'city');
-    $state = filter_input(INPUT_POST, 'state');
-    $college = filter_input(INPUT_POST, 'college');
-    $major = filter_input(INPUT_POST, 'major');
-    $year = filter_input(INPUT_POST, 'year', FILTER_VALIDATE_INT);
-    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-    $username = filter_input(INPUT_POST, 'username');
-    $password = filter_input(INPUT_POST, 'password');
-    $bio = filter_input(INPUT_POST, 'bio');
-    $wanted_type = filter_input(INPUT_POST, 'types');
+    //user is attempting to register on registration.php
+    $user_sex = filter_input(INPUT_GET, 'userSex');
+    $wanted_sex = filter_input(INPUT_GET, 'mateSex');
+    $first_name = filter_input(INPUT_GET, 'firstName');
+    $last_name = filter_input(INPUT_GET, 'lastName');
+    $age = filter_input(INPUT_GET, 'age', FILTER_VALIDATE_INT);
+    $city = filter_input(INPUT_GET, 'city');
+    $state = filter_input(INPUT_GET, 'state');
+    $college = filter_input(INPUT_GET, 'college');
+    $major = filter_input(INPUT_GET, 'major');
+    $year = filter_input(INPUT_GET, 'year');
+    $email = filter_input(INPUT_GET, 'email', FILTER_VALIDATE_EMAIL);
+    $username = filter_input(INPUT_GET, 'username');
+    $password = filter_input(INPUT_GET, 'password');
+    $bio = filter_input(INPUT_GET, 'bio');
+    $wanted_type = filter_input(INPUT_GET, 'types');
     
-    //code to validate input
-    if ($first_name === FALSE || $last_name === FALSE || $age === FALSE || $city === FALSE
-            || $state === FALSE || $college === false
-            || $major === false || $year === FALSE || $email === NULL || $username === false
-            || $password === NULL || $bio === false || $wanted_type === FALSE) {
-      $error = "Invalid data entry. Check all fields and try again.";
+    //code to validate input from registration page
+    if ($user_sex === NULL || $user_sex === FALSE || $user_sex === "") {
+        $error = "Invalid data entry. You must select your sex! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($wanted_sex === NULL || $wanted_sex === FALSE || $wanted_sex === "") {
+        $error = "Invalid data entry. You must enter select the sex you are interested in! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($first_name === NULL || $first_name === FALSE || $first_name === "") {
+        $error = "Invalid data entry. You must enter a first name! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($last_name === NULL || $last_name === FALSE || $last_name === "") { 
+        $error = "Invalid data entry. You must enter a last name! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($age === NULL || $age === FALSE || $age === "") { 
+        $error = "Invalid data entry. You must enter an age! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($city === NULL || $city === FALSE || $city === "") {
+        $error = "Invalid data entry. You must enter a city! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($state === NULL || $state === FALSE || $state === "") {
+        $error = "Invalid data entry. You must enter select a state! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($college === NULL || $college === FALSE || $college === "") {
+        $error = "Invalid data entry. You must select your college! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($major === NULL || $major === FALSE || $major === "") {
+        $error = "Invalid data entry. You must enter your major! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($year === NULL || $year === FALSE || $year === "") {
+        $error = "Invalid data entry. You must enter your year in college! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($email === NULL || $email === FALSE || $email === "") {
+        $error = "Invalid data entry. You must enter a valid email address! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($username === NULL || $username === FALSE || $username === "") {
+        $error = "Invalid data entry. You must enter a username! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($password === NULL || $password === FALSE || $password === "") {
+        $error = "Invalid data entry. You must enter a password! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($bio === NULL || $bio === FALSE || $bio === "") {
+        $error = "Invalid data entry. You must enter what you think your best friend would say about you! Please go back and try again.";
+        include('../errors/error.php');
+    } else if ($wanted_type === NULL || $wanted_type === FALSE || $wanted_type === "") {
+      $error = "Invalid data entry. You must select the type you are interested in.";
       include('../errors/error.php');
     } else {  
-        //code to add user (just the function)
+        //add user to db
         add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, $state, 
         $college, $major, $year, $email, $username, $password, $bio, $wanted_type);
-        header("Location: browse_matches.php");
-        echo 'adding user';
+        header("Location: browse_matches.php");   
     }
     
 } else if ($action == 'login') {
