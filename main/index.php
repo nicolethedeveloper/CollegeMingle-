@@ -4,6 +4,8 @@ require('../model/user_db.php');
 
 //persistent session
 $lifetime = 60 * 60 * 24 * 365 * 15; //15 years
+$path = ;
+$domain = ;
 session_set_cookie_params($lifetime, '/');
 session_start();
 
