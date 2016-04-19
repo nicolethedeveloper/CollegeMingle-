@@ -35,9 +35,21 @@
             </div>
             
             <div class="col-md-6">
-                <h2>Adam Jones</h2>
-                <form action="." method="get">
-                    <table>
+                <?php foreach ($users as $user) : ?>
+                    <h2><?php echo htmlspecialchars($user['first_name'] . ' ' . $user['last_name']); ?></h2>
+                    <form action="." method="get">
+                    
+                    
+                        <h4><?php echo "My Type: " . htmlspecialchars($user['user_type']); ?>
+                        <?php echo "<br><br>Types I Like: " . htmlspecialchars($user['wanted_type']); ?>
+                        <?php echo "<br><br>Age: " . htmlspecialchars($user['age']); ?>
+                        <?php echo "<br><br>City: " . htmlspecialchars($user['city']); ?>
+                        <?php echo "<br><br>State: " . htmlspecialchars($user['state']); ?>
+                        <?php echo "<br><br>College: " . htmlspecialchars($user['college']); ?>
+                        <?php echo "<br><br>Major: " . htmlspecialchars($user['major']); ?>
+                        <?php echo "<br><br>Year: " . htmlspecialchars($user['year']); ?>                      
+                        <?php echo "<br><br>About Me: " . htmlspecialchars($user['bio']); ?></h4>
+                   <!-- <table>
                             <tr>
                                 <th>First Name</th>
                                 <th>Last Name</th>
@@ -46,24 +58,26 @@
                                 <th>Password</th>
                                 <th>&nbsp;</th>
                             </tr>
-                            <?php foreach ($technicians as $technician) : ?>
+                            
                             <tr>
-                                <td><?php echo htmlspecialchars($technician['firstName']); ?></td>
-                                <td><?php echo htmlspecialchars($technician['lastName']); ?></td>
-                                <td><?php echo htmlspecialchars($technician['email']); ?></td>
-                                <td><?php echo htmlspecialchars($technician['phone']); ?></td>
-                                <td><?php echo htmlspecialchars($technician['password']); ?></td>
+                                <td>College: <?php echo htmlspecialchars($user1['college']); ?></td>
+                                <td><?php echo htmlspecialchars($user1['last_name']); ?></td>
+                                <td><?php echo htmlspecialchars($user1['city']); ?></td>
+                                <td><?php echo htmlspecialchars($user1['state']); ?></td>
+                                <td><?php echo htmlspecialchars($user1['college']); ?></td>
                                 <td><form action="." method="post">
                                     <input type="hidden" name="action"
                                            value="delete_technician">
                                     <input type="hidden" name="id"
-                                           value="<?php echo htmlspecialchars($technician['techID']); ?>">
+                                           value="<?php echo htmlspecialchars($user1['user_id']); ?>">
                                     <input type="submit" value="Delete">
                                 </form></td>
                             </tr>
                             <?php endforeach; ?>
-                        </table>
-                    <input type="submit" value="Email Match" />
+                        </table> -->
+                    <br><br>
+                    <label>Interested in getting to know this match?</label>
+                    <input type="submit" name="action" value="Email Match" />
                 </form>
             </div>
             

@@ -35,7 +35,7 @@
     <h3 class="text-center">Tell Us A Little About Yourself, Then Select Your Type On the Right</h3><br><br>
     	
         <!-- form -->
-        <form action="." method="get">
+        <form action="." method="POST">
         <div class="col-md-3 col-md-offset-1">
             <input type="hidden" name="action" value="add_user">  <!-- action attribute -->
 			

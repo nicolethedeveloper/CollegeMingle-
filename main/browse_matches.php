@@ -34,48 +34,52 @@
     
     	<div class="col-md-6">
         	<div class="match_pics">
-        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
-                <p class="text-center">Adam Jones</p>
-                <p class="text-center">19 | Virginia Beach, VA</p>
-                <form action="." method="post" />
-                    <input type="hidden" name="action" value="view_match1" />
-                    <input class="btn-view-match" type="submit" value="View Match" />
-                </form>
-            </div>
-            <div class="match_pics">
-        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
-                <p class="text-center">Adam Jones</p>
-                <p class="text-center">19 | Virginia Beach, VA</p>
-                <form action="." method="post" />
-                    <input type="hidden" name="action" value="view_match2" />
-                    <input class="btn-view-match" type="submit" value="View Match" />
-                </form>
-            </div>
+                    <a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+                    <p class="text-center">Adam Jones</p>
+                    <p class="text-center">19 | Virginia Beach, VA</p>
+                    <form action="." method="post" />
+                        <input type="hidden" name="action" value="view_match" />
+                        <input type="hidden" name="user_id" value="1" />
+                        <input class="btn-view-match" type="submit" value="View Match" />
+                    </form>
+                </div>
+                <div class="match_pics">
+                    <a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+                    <p class="text-center">Adam Jones</p>
+                    <p class="text-center">19 | Virginia Beach, VA</p>
+                    <form action="." method="post" />
+                        <input type="hidden" name="action" value="view_match" />
+                        <input type="hidden" name="user_id" value="2" />
+                        <input class="btn-view-match" type="submit" value="View Match" />
+                    </form>
+                </div>
             
-        </div> <!-- end of column -->
+            </div> <!-- end of column -->
         
-        <div class="col-md-6">
+            <div class="col-md-6">
         	<div class="match_pics">
-        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
-                <p class="text-center">Adam Jones</p>
-                <p class="text-center">19 | Virginia Beach, VA</p>
-                <form action="." method="post" />
-                    <input type="hidden" name="action" value="view_match3" />
-                    <input class="btn-view-match" type="submit" value="View Match" />
-                </form>
-            </div>
+                    <a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+                    <p class="text-center">Adam Jones</p>
+                    <p class="text-center">19 | Virginia Beach, VA</p>
+                    <form action="." method="post" />
+                        <input type="hidden" name="action" value="view_match" />
+                        <input type="hidden" name="user_id" value="3" />
+                        <input class="btn-view-match" type="submit" value="View Match" />
+                    </form>
+                </div>
             <div class="match_pics">
-        		<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
+        	<a href="#"><img src="../images/man1.jpeg" alt="man1" width="400" height="359" class="img-responsive"></a>
                 <p class="text-center">Adam Jones</p>
                 <p class="text-center">19 | Virginia Beach, VA</p>
                 <form action="." method="post" />
-                    <input type="hidden" name="action" value="view_match4" />
+                    <input type="hidden" name="action" value="view_match" />
+                    <input type="hidden" name="user_id" value="4" />
                     <input class="btn-view-match" type="submit" value="View Match" />
                 </form>
             </div>
         </div> <!-- end of column -->
 
-  </div> <!-- end of row -->
+    </div> <!-- end of row -->
 </div>
 
 <!-- footer -->

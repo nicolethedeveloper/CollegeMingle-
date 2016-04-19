@@ -60,16 +60,42 @@ function quickMatch() {
 }
 
 //function to view a user
-function viewUser1() {
+function getUser($user_id) {
     global $db;
     $query = 'SELECT * FROM users
-              WHERE last_name = "Jones"
-              ';
+              WHERE user_id = :user_id';
     $statement = $db->prepare($query);
+    $statement->bindValue(':user_id', $user_id);
     $statement->execute();
-    $user = $statement->fetch();
+    $users = $statement->fetchAll();
     $statement->closeCursor();
-    return $user;
+    return $users;
+}
+
+function usernameExists($username) {
+    global $db;
+    $query = 'SELECT username
+               FROM users
+               WHERE username = :username';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);  
+    $statement->execute();
+    $db_user = $statement->fetchAll();
+    $statement->closeCursor();
+    return $db_user;
+}
+
+function passwordExists($pass) {
+    global $db;
+    $query = 'SELECT pass
+               FROM users
+               WHERE pass = :pass';
+    $statement = $db->prepare($query); 
+    $statement->bindValue(':pass', $pass);
+    $statement->execute();
+    $db_pass = $statement->fetchAll();
+    $statement->closeCursor();
+    return $db_pass;
 }
 
 
