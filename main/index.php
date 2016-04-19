@@ -13,7 +13,7 @@ if ($action === NULL) {
         $action = 'login.php'; //try to change to home page? ../index.php
     }
 }
-
+//if the user is registering...
 if ($action == 'add_user') {
     //user is attempting to register on registration.php
     $user_sex = filter_input(INPUT_POST, 'userSex');
@@ -32,7 +32,7 @@ if ($action == 'add_user') {
     $bio = filter_input(INPUT_POST, 'bio');
     $wanted_type = filter_input(INPUT_POST, 'types');
     
-    //code to validate input from registration page
+    //validate input from registration page
     if ($user_sex === NULL || $user_sex === FALSE || $user_sex === "") {
         $error = "Invalid data entry. You must select your sex! Please go back and try again.";
         include('../errors/error.php');
@@ -90,12 +90,16 @@ if ($action == 'add_user') {
     $pword_login = filter_input(INPUT_POST, 'pword_login');
     $usernameExists = usernameExists($uname_login);
     $passwordExists = passwordExists($pword_login);
-    
-    //validate input
+    $isAdmin = isAdmin($uname_login);
+  
+    //validate input & log user in
     if ($uname_login === NULL || $pword_login === NULL || $uname_login === FALSE || $pword_login === FALSE) {
         $error = "Invalid login data. Check all fields and try again.";
         include('../errors/error.php');
-    } else if (empty($usernameExists)) {
+    } else if(!empty($isAdmin)) {
+        //if the user is an admin, redirect them to the admin page
+        header("Location: ?action=admin_page"); //admin page  
+    } else if (empty($usernameExists && empty($isAdmin))) {
         //if the user is not in the database, redirect to registration
         header("Location: registration.php");
     } else if ((empty($usernameExists) && !empty($passwordExists)) || (!empty($usernameExists) && empty($passwordExists))) {
@@ -104,7 +108,13 @@ if ($action == 'add_user') {
         //look in database for these credentials and see if they exists, if not, relocate to registration
         echo 'You have logged in successfully!';
         header("Location: browse_matches.php");
+    } else {
+        $error = "Unknown Login Error. Try again";
+        include('../errors/error.php');
     }
+        
+        
+//if the user is trying to view a profile    
 } else if ($action == 'view_match') {
     $user_id = filter_input(INPUT_POST, 'user_id');
     $users = getUser($user_id);
@@ -113,6 +123,10 @@ if ($action == 'add_user') {
     include 'browse_matches.php';
 } else if ($action == 'Email Match') {
     
+} else if ($action == 'admin_page') {
+    include 'admin.php';
+    //for the admin stuff, create it's own header page for admins only
+    $allUsers = displayAllUsers();
 }
 ?>
 

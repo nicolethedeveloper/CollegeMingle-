@@ -31,33 +31,8 @@ function add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, 
 }
 
 //delete_user function
-function deleteUser() {
-        gloabl $db;
-        $query = 'DELETE * FROM users
-                  WHERE username = :username';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':username', $username);
-        $success = $statement->execute();
-        $statement->closeCursor();
-}
+
 //quick_match function
-function quickMatch() {
-        global $db;
-        $query = 'SELECT * FROM users
-                  WHERE wanted_sex = :wanted_sex';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':wanted_sex', $wanted_sex);
-        $success = $statement->execute();
-        $statement->closeCursor();
-        
-        $query = 'SELECT * FROM users
-                  WHERE wanted_type = :wanted_type';
-        $statement = $db->prepare($query);
-        $statement->bindValue(':wanted_type', $wanted_type);
-        $success = $statement->execute();
-        $statement->closeCursor();
-        
-}
 
 //function to view a user
 function getUser($user_id) {
@@ -98,6 +73,30 @@ function passwordExists($pass) {
     return $db_pass;
 }
 
+function isAdmin($username) {
+        global $db;
+    $query = 'SELECT username
+               FROM admin
+               WHERE username = :username';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':username', $username);  
+    $statement->execute();
+    $db_user = $statement->fetchAll();
+    $statement->closeCursor();
+    return $db_user;
+}
+
+//function to diplay all users in the db for admin
+function displayAllUsers() {
+    global $db;
+    $query = 'SELECT * FROM users
+              ORDER BY last_name';
+    $statement = $db->prepare($query);
+    $statement->execute();
+    $allUsers = $statement->fetchAll();
+    $statement->closeCursor();
+    return $allUsers;
+}
 
 ?>
 
