@@ -2,6 +2,11 @@
 require('../model/database.php');
 require('../model/user_db.php');
 
+//persistent session
+$lifetime = 60 * 60 * 24 * 365 * 15; //15 years
+session_set_cookie_params($lifetime, '/');
+session_start();
+
 //default users to the login page
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
