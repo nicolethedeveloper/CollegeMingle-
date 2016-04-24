@@ -3,7 +3,14 @@ require('../model/database.php');
 require('../model/user_db.php');
 
 //persistent session
+$name = 'user_profile';
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $expire, $path);
+session_start();
 
+//create a user profile array
+if (empty($_SESSION['user_profile'])) { $_SESSION['user_profile'] = array(); }
 
 //default users to the login page
 $action = filter_input(INPUT_POST, 'action');
