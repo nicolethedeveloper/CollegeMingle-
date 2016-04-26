@@ -41,7 +41,7 @@ session_set_cookie_params($name, $value, $expire, $path);
 session_start();
 
 //create a user profile array
-if (empty($_SESSION['user_profile'])) { $_SESSION['user_profile'] = array(); }
+if (empty($_SESSION['user_profiles'])) { $_SESSION['user_profiles'] = array(); }
 
 //default users to the login page
 $action = filter_input(INPUT_POST, 'action');
