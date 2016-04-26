@@ -31,6 +31,15 @@ function add_user($user_sex, $wanted_sex, $first_name, $last_name, $age, $city, 
 }
 
 //delete_user function
+function deleteUser($user_id) {
+    global $db;
+    $query = 'DELETE FROM users
+              WHERE user_id = :user_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':user_id', $user_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
 
 //quick_match function
 
@@ -96,6 +105,20 @@ function displayAllUsers() {
     $allUsers = $statement->fetchAll();
     $statement->closeCursor();
     return $allUsers;
+}
+
+//function to return users with a type of null for admin
+function nullUserType($nullType) {
+    global $db;
+    $query = 'SELECT * FROM users '
+            . 'WHERE user_type = :nullType '
+            . 'ORDER BY last_name';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':nullType', $nullType);  
+    $statement->execute();
+    $nullUsers = $statement->fetchAll();
+    $statement->closeCursor();
+    return $nullUsers;
 }
 
 ?>

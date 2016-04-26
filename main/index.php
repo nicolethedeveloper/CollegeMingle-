@@ -2,9 +2,6 @@
 require('../model/database.php');
 require('../model/user_db.php');
 
-//persistent session
-
-
 //default users to the login page
 $action = filter_input(INPUT_POST, 'action');
 if ($action === NULL) {
@@ -123,10 +120,17 @@ if ($action == 'add_user') {
     include 'browse_matches.php';
 } else if ($action == 'Email Match') {
     
-} else if ($action == 'admin_page') {
+} else if ($action == 'admin_page') {         //for the admin stuff, create it's own header page for admins only
+    $allUsers = displayAllUsers();  //displays all users so admin can delete
+    $nullType = 'none';
+    $nullUsers = nullUserType($nullType);    //displays users with no type
     include 'admin.php';
-    //for the admin stuff, create it's own header page for admins only
-    $allUsers = displayAllUsers();
+    
+} else if ($action == 'delete_user') {      //if the admin is deleting a user
+    $userID = filter_input(INPUT_POST, 'user_id');
+    //method to delete selected user
+    deleteUser($userID);
+    header("Location: ?action=admin_page");   
 }
 ?>
 

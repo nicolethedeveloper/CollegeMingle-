@@ -30,23 +30,31 @@
     <h1 class="text-center">Administration Page</h1>
     <hr>
     <div class="row">
-        <div class="col-md-6">
-            <h2 class="text-center">Remove Users</h2>
+        <h2 class="text-center">Remove Users</h2>
+        <div class="col-md-12 col-md-offset-3">
             
-            <!-- add table to show users with delete buttons. Funciton will delete user from database -->
-        	
-            <!-- display a table of products -->
-                <table>
+            
+            <!-- table to show users with delete buttons. Function will delete user from database -->
+                <table class="text-center">
                     <tr>
-                        <th>User</th>
-                        <th>Name</th>
-                        <th>Email</th>
+                        <th class="text-center">User</th>
+                         <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                           <th>&nbsp;</th>
+                           <th class="text-center">Name</th>
+                         <th>&nbsp;</th>
+                        <th class="text-center">Email</th>
                         <th>&nbsp;</th>
                     </tr>
                     <?php foreach ($allUsers as $auser) : ?>
                     <tr>
                         <td><?php echo htmlspecialchars($auser['username']); ?></td>
+                         <th>&nbsp;</th>
+                          <th>&nbsp;</th>
+                           <th>&nbsp;</th>
+                          
                         <td><?php echo htmlspecialchars($auser['first_name'] . " " . $auser['last_name']); ?></td>
+                         <th>&nbsp;</th>
                         <td><?php echo htmlspecialchars($auser['email']); ?></td>
                         <td><form action="." method="post">
                             <input type="hidden" name="action"
@@ -64,12 +72,67 @@
     
     
         </div> <!-- end of column -->
+    </div> <!-- end of row -->
     
-        <div class="col-md-6">
-            <h2 class="text-center">Create User Type</h2>
+    <hr>
+    <div class="row">
+    <h2 class="text-center">Create User Type</h2>
+        <div class="col-md-12 col-md-offset-1">
+            
             
             <!-- add data to show user's bio and type. Function will add type to user table-->
-        	
+                <table class="text-center" id="center-table">
+                    <tr>
+                        <th class="text-center">User</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Email</th>
+                        <th>Types</th>
+                    </tr>
+                    <?php foreach ($nullUsers as $nullUser) : ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($nullUser['username']); ?></td>
+                        <td><?php echo htmlspecialchars($nullUser['first_name'] . " " . $nullUser['last_name']); ?></td>
+                        <td><?php echo htmlspecialchars($nullUser['email']); ?></td>
+                        
+                        
+                        <td><form action="." method="post">
+                            <input type="hidden" name="action"
+                                   value="delete_user">
+                            <input type="hidden" name="user_id"
+                                   value="<?php echo htmlspecialchars($nullUser['user_id']); ?>">
+                            <!--<input type="submit" value="Delete">-->
+                            <td>
+                                <input type="radio" name="type"
+                                   <?php if (isset($type) && $type=="john") echo "checked";?>
+                                    value="john">John
+                                <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="alejandro") echo "checked";?>
+                                     value="alejandro">Alejandro
+                                <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="bob") echo "checked";?>
+                                     value="bob">Bob
+                                    <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="ty") echo "checked";?>
+                                     value="ty">Ty
+                                    
+                                <input type="radio" name="ashley"
+                                   <?php if (isset($type) && $type=="ashley") echo "checked";?>
+                                    value="ashley">Ashley
+                                <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="becky") echo "checked";?>
+                                     value="becky">Becky
+                                <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="claire") echo "checked";?>
+                                     value="claire">Claire
+                                <input type="radio" name="type"
+                                    <?php if (isset($type) && $type=="shonte") echo "checked";?>
+                                     value="shonte">Shonte
+                            </td>
+
+                        </form></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </table>
     
 
     
