@@ -2,11 +2,42 @@
 require('../model/database.php');
 require('../model/user_db.php');
 
-//persistent session
-$name = 'user_profile';
+//persistent sessions
+$name = 'user1';
+$value = ajones;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $expire, $path);
+session_set_cookie_params($name, $value, $expire, $path);
+
+$name = 'user2';
+$value = mcooper;
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $value, $expire, $path);
+
+$name = 'user3';
+$value = jsanchez;
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $value, $expire, $path);
+
+$name = 'user4';
+$value = jthompson;
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $value, $expire, $path);
+
+$name = 'user5';
+$value = zmalik;
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $value, $expire, $path);
+
+$name = 'user6';
+$value = kurban;
+$expire = strtotime('+3 years');
+$path = '/';
+session_set_cookie_params($name, $value, $expire, $path);
 session_start();
 
 //create a user profile array
