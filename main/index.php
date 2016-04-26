@@ -7,38 +7,45 @@ $name = 'user1';
 $value = ajones;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
 
 $name = 'user2';
 $value = mcooper;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
 
 $name = 'user3';
 $value = jsanchez;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
 
 $name = 'user4';
 $value = jthompson;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
 
 $name = 'user5';
 $value = zmalik;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
 
 $name = 'user6';
 $value = kurban;
 $expire = strtotime('+3 years');
 $path = '/';
-session_set_cookie_params($name, $value, $expire, $path);
+setcookie($name, $value, $expire, $path);
+
+$lifetime = 60 * 60 * 24 * 365; // 1 year in seconds
+session_set_cookie_params($lifetime, '/');
 session_start();
+
+$_SESSION['username'] = '';
+$_SESSION['password'] = '';
+
 
 //create a user profile array
 if (empty($_SESSION['user_profiles'])) { $_SESSION['user_profiles'] = array(); }
