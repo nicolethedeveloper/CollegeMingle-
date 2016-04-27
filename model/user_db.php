@@ -41,10 +41,21 @@ function deleteUser($user_id) {
     $statement->closeCursor();
 }
 
-//quick_match function
-
 //function to view a user
 function getUser($user_id) {
+    global $db;
+    $query = 'SELECT * FROM users
+              WHERE user_id = :user_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':user_id', $user_id);
+    $statement->execute();
+    $users = $statement->fetchAll();
+    $statement->closeCursor();
+    return $users;
+}
+
+//function to get user email by user_id
+function getUserEmail($user_id) {
     global $db;
     $query = 'SELECT * FROM users
               WHERE user_id = :user_id';
@@ -119,6 +130,27 @@ function nullUserType($nullType) {
     $nullUsers = $statement->fetchAll();
     $statement->closeCursor();
     return $nullUsers;
+}
+
+//function for admin to add a type to a user without one
+function addType($user_id, $user_type) {
+    global $db;
+    $query = 'UPDATE users
+              SET user_type = :user_type
+              WHERE user_id = :user_id';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':user_type', $user_type);
+    $statement->bindValue(':user_id', $user_id);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
+//function to sanitize input from user
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
 }
 
 ?>
