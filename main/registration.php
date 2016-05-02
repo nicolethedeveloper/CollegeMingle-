@@ -189,8 +189,8 @@
     </div>
     <div class="col-lg-4 col-sm-12">
       <h2>About Us</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptates, soluta velit nostrum ut iste exercitationem vitae ipsum repellendus laudantium ab possimus nemo odio cumque illum nulla laborum blanditiis unde.</p>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, voluptates, soluta velit nostrum ut iste exercitationem vitae ipsum repellendus laudantium ab possimus nemo odio cumque illum nulla laborum blanditiis unde.</p>
+      <p>College Mingle is America's #1 dating website for college students!  <br>Our staff at College Mingle is committed to matching college and university students across the United States.</p>
+      <p>If you are single and looking for a match in your area, don't hesitate to register and choose from one of our four subcription packages.</p>
     </div>
   </div>
 </div>
