@@ -108,7 +108,7 @@
         <div class="media-left"> <a href="#"> <img class="media-object" src="../images/35X35.gif" alt="..."> </a> </div>
         <div class="media-body">
           <h4 class="media-heading">Media heading</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+          The two of us met in our Junior year at Stanford.  College Mingle truly helped us match up and connect immediately.  Best decision I've ever made!  Ashley and I have been married for over a year now! </div>
       </div>
       <div class="media">
         <div class="media-left"> <a href="#"> <img class="media-object" src="../images/35X35.gif" alt="..."> </a> </div>
