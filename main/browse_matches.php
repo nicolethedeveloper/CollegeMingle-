@@ -114,7 +114,7 @@
         <div class="media-left"> <a href="#"> <img class="media-object" src="../images/35X35.gif" alt="..."> </a> </div>
         <div class="media-body">
           <h4 class="media-heading">Media heading</h4>
-          Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. </div>
+          I met my husband, Terry, at UNC Charlotte after using my profile for three months.  Six months after matching up, we became inseperable.  We plan to get married after graduation!  </div>
       </div>
     </div>
     <div class="col-lg-4 col-sm-12">
